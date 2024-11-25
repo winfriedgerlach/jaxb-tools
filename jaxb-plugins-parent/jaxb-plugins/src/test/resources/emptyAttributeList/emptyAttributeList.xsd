@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:jaxb="https://jakarta.ee/xml/ns/jaxb"
+	jaxb:version="3.0">
+
+	<xs:annotation>
+		<xs:appinfo>
+			<jaxb:globalBindings choiceContentProperty="true" generateIsSetMethod="true">
+				<!--xjc:noValidator />
+				<xjc:noValidatingUnmarshaller /-->
+			</jaxb:globalBindings>
+			<jaxb:schemaBindings>
+				<jaxb:package name="org.jvnet.jaxb.plugin.copyable.tests"/>
+			</jaxb:schemaBindings>
+		</xs:appinfo>
+	</xs:annotation>
+
+  <xs:element name="FooElement">
+    <xs:complexType>
+      <xs:attribute name="BarAttribute" type="BarType" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:simpleType name="BarType">
+    <xs:list itemType="xs:string"/>
+  </xs:simpleType>
+
+</xs:schema>
